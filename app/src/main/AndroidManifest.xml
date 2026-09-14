@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -6,6 +7,10 @@
         android:label="Jarr Tools"
         android:allowBackup="false"
         android:supportsRtl="true">
+
+        <activity
+            android:name=".AnimeActivity"
+            android:exported="false" />
 
         <activity
             android:name=".BugSimulatorActivity"
@@ -31,10 +36,22 @@
             android:name=".FakeLogActivity"
             android:exported="false" />
 
-        <activity android:name=".SystemMonitorActivity" android:exported="false" />
-        <activity android:name=".BatterySimulatorActivity" android:exported="false" />
-        <activity android:name=".SignalSimulatorActivity" android:exported="false" />
-        <activity android:name=".StorageSimulatorActivity" android:exported="false" />
+        <activity
+            android:name=".SystemMonitorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BatterySimulatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SignalSimulatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".StorageSimulatorActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
