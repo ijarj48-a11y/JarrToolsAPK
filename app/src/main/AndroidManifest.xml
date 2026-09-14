@@ -1,0 +1,50 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:theme="@style/AppTheme"
+        android:label="Jarr Project"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".BugSimulatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CrashSimulatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LagSimulatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".UIGlitchActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".NetworkErrorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FakeLogActivity"
+            android:exported="false" />
+
+        <activity android:name=".SystemMonitorActivity" android:exported="false" />
+        <activity android:name=".BatterySimulatorActivity" android:exported="false" />
+        <activity android:name=".SignalSimulatorActivity" android:exported="false" />
+        <activity android:name=".StorageSimulatorActivity" android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
