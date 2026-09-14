@@ -1,0 +1,58 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background -->
+    <path
+        android:fillColor="#071A38"
+        android:pathData="M0,0 L108,0 L108,108 L0,108 Z"/>
+
+    <!-- Blue energy ring -->
+    <path
+        android:fillColor="#1565FF"
+        android:pathData="M54,8 A46,46 0,1 0,54 100 A46,46 0,1 0,54 8 M54,16 A38,38 0,1 1,54 92 A38,38 0,1 1,54 16"
+        android:fillType="evenOdd"/>
+
+    <!-- Energy spikes -->
+    <path
+        android:fillColor="#39A7FF"
+        android:pathData="M54,3 L59,25 L75,10 L68,31 L94,20 L73,38 L104,40 L76,48 L99,63 L72,57 L87,87 L63,65 L59,101 L52,69 L31,94 L39,65 L9,79 L34,56 L4,49 L36,43 L14,22 L42,34 L38,7 L51,27 Z"/>
+
+    <!-- Character head silhouette -->
+    <path
+        android:fillColor="#F4F7FF"
+        android:pathData="M35,42 L28,30 L39,34 L35,20 L47,29 L49,13 L56,29 L67,17 L65,31 L80,25 L70,39 L77,43 L70,58 L61,66 L47,66 L37,57 Z"/>
+
+    <!-- Hair shadow -->
+    <path
+        android:fillColor="#B9D7FF"
+        android:pathData="M35,42 L39,34 L47,39 L50,29 L56,39 L65,31 L70,39 L62,47 L43,47 Z"/>
+
+    <!-- Blindfold -->
+    <path
+        android:fillColor="#071A38"
+        android:pathData="M34,43 L73,43 L70,53 L37,53 Z"/>
+
+    <!-- Blue glow eyes -->
+    <path
+        android:fillColor="#48C7FF"
+        android:pathData="M40,46 L50,46 L47,49 L41,49 Z M58,46 L68,46 L67,49 L61,49 Z"/>
+
+    <!-- Coat/body -->
+    <path
+        android:fillColor="#0A1020"
+        android:pathData="M38,60 L49,65 L59,65 L70,60 L87,91 L21,91 Z"/>
+
+    <!-- Coat blue highlights -->
+    <path
+        android:fillColor="#1976FF"
+        android:pathData="M38,60 L49,65 L43,91 L29,91 Z M70,60 L59,65 L65,91 L79,91 Z"/>
+
+    <!-- Central J symbol -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,70 L62,70 L62,79 Q62,85 55,85 Q48,85 48,79 L48,76 L53,76 L53,79 Q53,81 55,81 Q57,81 57,79 L57,75 L48,75 Z"/>
+
+</vector>

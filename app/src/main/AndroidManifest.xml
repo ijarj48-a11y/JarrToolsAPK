@@ -5,13 +5,12 @@
     <application
         android:theme="@style/AppTheme"
         android:label="Jarr Tools"
+        android:icon="@drawable/ic_jarr_tools"
+        android:roundIcon="@drawable/ic_jarr_tools"
         android:allowBackup="false"
         android:supportsRtl="true">
 
         <activity
-            android:name=".AnimeActivity"
-            android:exported="false" />
-
         <activity
             android:name=".BugSimulatorActivity"
             android:exported="false" />
