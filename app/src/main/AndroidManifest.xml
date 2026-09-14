@@ -3,7 +3,7 @@
 
     <application
         android:theme="@style/AppTheme"
-        android:label="Jarr Project"
+        android:label="Jarr Tools"
         android:allowBackup="false"
         android:supportsRtl="true">
 
