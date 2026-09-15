@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
@@ -22,15 +23,15 @@ public class MainActivity extends Activity {
         splash.setGravity(Gravity.CENTER);
         splash.setPadding(30, 30, 30, 30);
 
-        GradientDrawable bg = new GradientDrawable(
+        GradientDrawable background = new GradientDrawable(
                 GradientDrawable.Orientation.TL_BR,
-                new int[]{
+                new int[] {
                         Color.rgb(3, 18, 40),
                         Color.rgb(0, 76, 145),
                         Color.rgb(10, 35, 60)
                 }
         );
-        splash.setBackground(bg);
+        splash.setBackground(background);
 
         TextView title = new TextView(this);
         title.setText("JARR TOOLS");
@@ -38,15 +39,13 @@ public class MainActivity extends Activity {
         title.setTextColor(Color.WHITE);
         title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
         title.setGravity(Gravity.CENTER);
-        title.setLetterSpacing(0.12f);
 
-        TextView collab = new TextView(this);
-        collab.setText("× TAZEY");
-        collab.setTextSize(18);
-        collab.setTextColor(Color.rgb(255, 220, 60));
-        collab.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        collab.setGravity(Gravity.CENTER);
-        collab.setLetterSpacing(0.08f);
+        TextView partner = new TextView(this);
+        partner.setText("× TAZEY");
+        partner.setTextSize(18);
+        partner.setTextColor(Color.rgb(255, 220, 60));
+        partner.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        partner.setGravity(Gravity.CENTER);
 
         TextView loading = new TextView(this);
         loading.setText("Preparing your tools...");
@@ -55,33 +54,35 @@ public class MainActivity extends Activity {
         loading.setGravity(Gravity.CENTER);
 
         splash.addView(title);
-        splash.addView(collab);
+        splash.addView(partner);
 
-        LinearLayout.LayoutParams loadingParams =
+        LinearLayout.LayoutParams params =
                 new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-        loadingParams.topMargin = 28;
-        splash.addView(loading, loadingParams);
+
+        params.topMargin = 28;
+        splash.addView(loading, params);
 
         setContentView(splash);
 
-        new android.os.Handler().postDelayed(() -> {
+        new android.os.Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                WebView webView = new WebView(MainActivity.this);
 
-            WebView webView = new WebView(this);
-            WebSettings settings = webView.getSettings();
+                WebSettings settings = webView.getSettings();
+                settings.setJavaScriptEnabled(true);
+                settings.setDomStorageEnabled(true);
+                settings.setLoadWithOverviewMode(true);
+                settings.setUseWideViewPort(true);
 
-            settings.setJavaScriptEnabled(true);
-            settings.setDomStorageEnabled(true);
-            settings.setLoadWithOverviewMode(true);
-            settings.setUseWideViewPort(true);
+                webView.setWebViewClient(new WebViewClient());
+                webView.loadUrl("https://jarr-tools.netlify.app");
 
-            webView.setWebViewClient(new android.webkit.WebViewClient());
-            webView.loadUrl("https://jarr-tools.netlify.app");
-
-            setContentView(webView);
-
+                setContentView(webView);
+            }
         }, 5000);
     }
 }
