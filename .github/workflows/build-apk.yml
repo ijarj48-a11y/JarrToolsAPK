@@ -1,10 +1,10 @@
 name: Build Jarr Tools APK
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,29 +15,25 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
       - name: Setup Android SDK
-        run: |
-          export ANDROID_HOME=/usr/local/lib/android/sdk
-          export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
-          echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
-          echo "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
-          sdkmanager --version
-          yes | sdkmanager --licenses || true
-          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+        uses: android-actions/setup-android@v3
 
-      - name: Setup Gradle
+      - name: Install Gradle
         run: |
-          wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip
-          unzip -q gradle-8.7-bin.zip
-          ./gradle-8.7/bin/gradle assembleDebug
+          sudo apt-get update
+          sudo apt-get install -y gradle
+
+      - name: Build APK
+        run: gradle assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: JarrTools-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: JarrTools-APK
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error

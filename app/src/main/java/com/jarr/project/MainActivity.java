@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
                 settings.setUseWideViewPort(true);
 
                 webView.setWebViewClient(new WebViewClient());
-                webView.loadUrl("https://jarr-tools.netlify.app");
+                webView.loadUrl("https://jarrtools.vercel.app");
 
                 setContentView(webView);
             }
