@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         settings.setUseWideViewPort(true);
 
         webView.setWebViewClient(new WebViewClient());
+        webView.getSettings().setCacheMode(android.webkit.WebSettings.LOAD_NO_CACHE);
         webView.loadUrl("https://jarrtools.vercel.app");
 
         setContentView(webView);
